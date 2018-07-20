@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/FuturaLT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: gray;
+}
+
+.download {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.add {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: peru;
+  position: fixed;
+  top: 70px;
+  left: 0;
+}
+
+.wrapper {
+  width: 595px;
+  margin: auto;
+  font-family: "Futura";
+  padding: 20px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.header li {
+  list-style-type: none;
+}
+.header .logo {
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.header .basic-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: justify;
+}
+
+input {
+  border: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ccc;
+  padding: 5px;
+}
+
+.col {
+  width: 200px;
+  text-align: left;
+  padding: 5px 0;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: justify;
+  font-family: "Futura";
+}
+
+.title {
+  width: 200px;
+  text-align: left;
+}
+
+.value-title, .value {
+  width: 200px;
+  text-align: right;
+}
+.value-title input, .value input {
+  text-align: right;
+}
+
+.client {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.client .reference, .client .dates {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style/style.css.map */
