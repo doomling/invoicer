@@ -28,13 +28,13 @@
           <span>Referencia:</span>
           <input value="FB00000">
           <span>Cliente:</span>
-          <input placeholder="Nombre">
+          <input placeholder="Nombre" class="client-name">
         </div>
         <div class="dates">
           <span>Fecha:</span>
-          <input type="date" value="00/00/00">
+          <input type="daytime-local" value="00/00/00">
           <span>Fecha de entrega:</span>
-          <input type="date" value="00/00/00">
+          <input type="daytime-local" value="--/--/--">
         </div>
       </div>
       <div id="main-content" class="main-content">
@@ -73,7 +73,7 @@
           <div class="col">
           </div>
           <div class="value">
-            <input placeholder="$0">
+            <input placeholder="$0" id="subtotal">
           </div>
         </div>
         <div class="row-title">
@@ -90,7 +90,7 @@
           <div class="col">
           </div>
           <div class="value">
-            <input placeholder="$0">
+            <input placeholder="$0" id="iva">
           </div>
         </div>
         <div class="row-title">
@@ -107,7 +107,7 @@
           <div class="col">
           </div>
           <div class="value">
-            <input placeholder="$0">
+            <input placeholder="$0" id="total">
           </div>
         </div>
       </div>

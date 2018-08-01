@@ -103,6 +103,9 @@ textarea {
   justify-content: space-between;
   padding-bottom: 10px;
 }
+.client .client-name {
+  width: 300px;
+}
 .client .reference, .client .dates {
   display: flex;
   flex-direction: column;
