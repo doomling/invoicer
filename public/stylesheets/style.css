@@ -1,3 +1,4 @@
+/*colors*/
 @font-face {
   font-family: 'Futura';
   src: url("../fonts/FuturaLT.ttf") format("truetype");
@@ -5,27 +6,45 @@
   font-style: normal; }
 
 body {
-  background-color: gray; }
+  background-color: #c2c2c2;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; }
 
-.download {
-  position: fixed;
-  top: 0;
-  left: 0; }
-
-.add {
-  width: 50px;
-  height: 50px;
+nav {
+  background-color: #fafafa;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: peru;
-  position: fixed;
-  top: 70px;
-  left: 0; }
+  padding: 10px; }
+  nav .add, nav .remove {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ef5350;
+    margin: 0 5px;
+    cursor: pointer;
+    box-shadow: #4b636e; }
+  nav .add:hover, nav .remove:hover {
+    background-color: #ff867c; }
+  nav .company-select, nav .download {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    margin: 0 5px;
+    cursor: pointer;
+    box-shadow: #4b636e;
+    width: 150px;
+    border: 1px solid #ff867c;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif; }
 
 .wrapper {
   width: 595px;
-  margin: auto;
+  margin: 2% auto 0;
   font-family: 'Futura';
   padding: 20px;
   background-color: white; }
@@ -38,9 +57,7 @@ body {
     list-style-type: none; }
   .header .logo {
     min-width: 120px;
-    min-height: 120px;
-    border-radius: 50%;
-    border: 3px solid black; }
+    min-height: 120px; }
   .header .basic-info {
     display: flex;
     flex-direction: column;
@@ -51,6 +68,10 @@ input {
   border: 0; }
 
 .row {
+  display: flex;
+  justify-content: space-between; }
+
+.row-editable {
   display: flex;
   justify-content: space-between; }
 

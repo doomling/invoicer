@@ -1,6 +1,15 @@
 $A4-width: 595px;
 $A4-height: 842px;
 
+/*colors*/
+$primary: #4dd0e1;
+$primary-dark: #009faf;
+$pastelblue: #A9BCD0;
+$shadowblue: #748CAB;
+$charcoal: #373F51;
+$eerie: #1B1B1E;
+$glitter: #E9EBF8;
+
 @font-face {
   font-family: 'Futura';
   src: url('../fonts/FuturaLT.ttf') format('truetype');
@@ -9,30 +18,48 @@ $A4-height: 842px;
 }
 
 body {
-  background-color: gray;
+  background-color: #c2c2c2; 
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.download {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.add {
-  width: 50px;
-  height: 50px;
+nav {
+  background-color: #fafafa; 
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: peru;
-  position: fixed;
-  top: 70px;
-  left: 0;
+  padding: 10px;
+
+  @mixin button($color) {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color;
+    margin: 0 5px;
+    cursor: pointer;
+    box-shadow: #4b636e;
+  }
+  
+  .add, .remove {
+    @include button(#ef5350);
+  }
+  .add:hover, .remove:hover {
+    background-color: #ff867c
+  }
+
+  .company-select, .download {
+    @include button(#fafafa);
+    width: 150px;
+    border: 1px solid #ff867c;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+  }
 }
 
 .wrapper {
   width: $A4-width;
-  margin: auto;
+  margin: 2% auto 0;
   font-family: 'Futura';
   padding: 20px;
   background-color: white;
@@ -50,11 +77,7 @@ body {
   .logo {
     min-width: 120px;
     min-height: 120px;
-    border-radius: 50%;
-    border: 3px solid black;
-  //  background-image: url('https://s3.amazonaws.com/fibury-misc/test/logo.jpg');
   }
-
 
   .basic-info {
     display: flex;
@@ -66,11 +89,9 @@ body {
 
   input {
     border: 0;
-//    border-bottom: 1px solid black;
   }
 
   @mixin genericCol {
-    //background-color: yellow;
     width: 200px;
   }
 
@@ -80,6 +101,10 @@ body {
   }
 
   .row {
+    @include genericRow;
+  }
+
+  .row-editable {
     @include genericRow;
   }
 

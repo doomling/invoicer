@@ -1,24 +1,30 @@
 
-let myData = [];
-
-$('#client-data input').on('click', function() {
-  let index = $(this).index();
-  myData.push($('#client-data input').eq(index).val());
-  console.log(myData);
-})
-
 $('#add').on('click', function() {
-      const col = '<div class="row"><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="value"><input placeholder="$0"></div></div>'
+      const col = '<div class="row-editable"><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="value"><input placeholder="$0"></div></div>'
       $('#main-content').append(col);
 });
 
-$('#subtotal').on('change', function() {
+$('#remove').on('click', function() {
+  const last = $('.row').length - 1
+  console.log(last);
+  $('.row-editable').eq(last).remove();
+});
+
+let hasIva = false;
+
+$('#subtotal').on('change', function(hasIva) {
+  console.log(hasIva)
     const iva = 0.21
     const subtotal = parseInt($('#subtotal').val())
-    const finalIva = subtotal * iva; 
-    $('#iva').val( finalIva );
-    $('#total').val( subtotal + finalIva )
+    const finalIva = subtotal * iva;
+    if (hasIva === true) {  
+      $('#iva').val( finalIva );
+      $('#total').val( subtotal + finalIva )
+    } else {
+      $('#total').val( subtotal )
+    }
 });
+
 
 //////
 const url = 'http://localhost:3000/'
@@ -35,13 +41,6 @@ $.ajax({
       $('#options').append('<option>' + option + '</option>')
     }
 });
-
-/*$(window).on('load', function(companyData){
-    for (var i = 0; i < companyData.length; i++) {
-      const option = companyData[i].name
-      $('#options').append('<option>' + option + '</option>')
-    }
-});*/
 
 $('#button').on('click', function() {
     var element = document.getElementById('wrapper');

@@ -8,25 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./stylesheets/style.css" type="text/css" rel="stylesheet">
     <title>Invoice</title>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
     <nav>
-        <div id="button">
-            Download
-        </div>
         <div id="add" class="add">
             +
         </div>
+        <div id="remove" class="remove">
+            -
+        </div>
         <div>
-            <select name="opciones" id="options">
+            <select name="opciones" id="options" class="company-select">
             </select>
+        </div>
+        <div id="button" class="download">
+            Download
         </div>
     </nav>
     <div class="wrapper" id="wrapper">
       <div id="header" class="header">
         <div id="logo" class="logo">
-          <!--img src="img/logo.jpg"-->
+          <img src="./images/logo.jpg">
         </div>
         <div id="basic-info" class="basic-info">
           <li>Av Belgrano 748 7-72</li>
@@ -60,7 +63,7 @@
           <div class="value-title">Valor
           </div>
         </div>
-        <div class="row">
+        <div class="row-editable">
           <div class="col">
             <textarea placeholder="Escribe algo aquí"></textarea>
           </div>
