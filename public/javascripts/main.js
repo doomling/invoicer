@@ -1,30 +1,71 @@
 
 $('#add').on('click', function() {
-      const col = '<div class="row-editable"><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="value"><input placeholder="$0"></div></div>'
+      const col = '<div class="row-editable"><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="col"><textarea placeholder="Escribe algo aquí"></textarea></div><div class="values"><input class="value editable-value" placeholder="$0" value="0"></div></div>'
       $('#main-content').append(col);
 });
 
 $('#remove').on('click', function() {
-  const last = $('.row').length - 1
+  const rows = $('.row-editable').toArray();
+  console.log(rows)
+  const last = rows.length - 1
   console.log(last);
   $('.row-editable').eq(last).remove();
 });
 
 let hasIva = false;
 
-$('#subtotal').on('change', function(hasIva) {
+$('#has-iva').on('click', function(){
+  hasIva = !hasIva
   console.log(hasIva)
-    const iva = 0.21
-    const subtotal = parseInt($('#subtotal').val())
-    const finalIva = subtotal * iva;
-    if (hasIva === true) {  
-      $('#iva').val( finalIva );
-      $('#total').val( subtotal + finalIva )
+  return hasIva
+})
+
+$(document).on('blur', '.editable-value', function() {
+//$('.editable-value').on('blur', function(e) {
+    let sum = 0  
+    let iva = $('#iva').val()
+    console.log('este es el iva', iva)
+    const subtotal = getSubtotal()
+    console.log(subtotal, 'soy sub')
+    $('#subtotal').val(subtotal)
+     
+    if (hasIva) {
+      console.log('holi soy el if', subtotal)
+      iva = getIva(subtotal)
+      $('#total').val(subtotal + iva)
     } else {
-      $('#total').val( subtotal )
+      $('#total').val(subtotal)
     }
+    
+   //updateTotal()  
 });
 
+$('#has-iva').on('click', function() {
+    const subtotal = $('#subtotal')
+    const total = $('#total');
+      if (!hasIva) {
+        $('#iva').val(0)
+        $('#total').val(parseInt(subtotal.val()))
+      } else {
+        total.val(parseInt(total.val()) + getIva(parseInt(subtotal.val())))
+      }
+});
+
+function getIva (subtotal) {
+  console.log('estoy en el iva', subtotal)
+  const iva = subtotal * 0.21; 
+  $('#iva').val(iva)
+  return iva
+}
+
+function getSubtotal () {
+  let sum = 0;
+  $('.editable-value').each( function(index){
+    console.log(this)
+    sum += Number(($(this).val()));
+  })
+  return parseInt(sum)
+};
 
 //////
 const url = 'http://localhost:3000/'

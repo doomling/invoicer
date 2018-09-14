@@ -19,6 +19,9 @@
             -
         </div>
         <div>
+          <input id="has-iva" type="checkbox">
+        </div>
+        <div>
             <select name="opciones" id="options" class="company-select">
             </select>
         </div>
@@ -70,8 +73,8 @@
           <div class="col">
             <textarea placeholder="Escribe algo aquí"></textarea>
           </div>
-          <div class="value">
-            <input placeholder="$0">
+          <div class="values">
+            <input class="value editable-value" placeholder="$0" value="0">
           </div>
         </div>
       </div>
@@ -89,8 +92,8 @@
           </div>
           <div class="col">
           </div>
-          <div class="value">
-            <input placeholder="$0" id="subtotal">
+          <div class="values">
+            <input placeholder="$0" id="subtotal" class="value">
           </div>
         </div>
         <div class="row-title">
@@ -106,8 +109,8 @@
           </div>
           <div class="col">
           </div>
-          <div class="value">
-            <input placeholder="$0" id="iva">
+          <div> 
+            <input placeholder="$0" id="iva" class="value">
           </div>
         </div>
         <div class="row-title">
@@ -123,17 +126,16 @@
           </div>
           <div class="col">
           </div>
-          <div class="value">
-            <input placeholder="$0" id="total">
+          <div>
+            <input placeholder="$0" id="total" class="value">
           </div>
         </div>
       </div>
       <div class="additional-notes">
         <div class="row">
           <p>
-            Términos y condiciones:<br><br>
-            Los valores en este presupuesto están expresados SIN IVA.<br>
-            Se entrega factura A.<br>
+            Términos y condiciones:<br>
+            Se entrega factura A o B<br>
             Los valores publicados en esta cotización tienen una validez de treinta (30) días. Expirado el término los
             valores pueden variar y se deberá solicitar un nuevo presupuesto.
           </p>
