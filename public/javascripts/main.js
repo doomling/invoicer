@@ -5,7 +5,9 @@ $('#add').on('click', function() {
 });
 
 $('#remove').on('click', function() {
-  const last = $('.row').length - 1
+  const rows = $('.row-editable').toArray();
+  console.log(rows)
+  const last = rows.length - 1
   console.log(last);
   $('.row-editable').eq(last).remove();
 });
