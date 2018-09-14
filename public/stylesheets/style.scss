@@ -136,7 +136,8 @@ nav {
   .value-title, .value, {
     @include genericCol;
     text-align: right;
-
+    width: 80px;
+    
     input {
       text-align: right;
     }
@@ -149,6 +150,7 @@ nav {
 
   .client-name {
     width: 300px;
+    text-align: left;
   }
 
   .reference, .dates {
